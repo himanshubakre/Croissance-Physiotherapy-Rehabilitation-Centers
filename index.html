@@ -1,0 +1,615 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Croissance Physiotherapy Demo</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Physiotherapy and rehabilitation in Baner, Pune. Personalized care, clear guidance and easy appointment enquiries by WhatsApp or phone. Website concept prepared for review.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap">
+<style>
+/* Layout concept: editorial two-column hero built around a goniometer (the instrument that measures joint range of motion), then alternating sage / white / teal bands so every section has its own rhythm. */
+:root{
+  --bg:#FAFAF7; --surface:#FFFFFF; --sage:#DDECE5; --sage-2:#EEF5F1;
+  --ink:#263238; --muted:#4F6168; --line:#D5E2DB;
+  --primary:#126B68; --primary-hover:#0D5654; --on-primary:#FFFFFF;
+  --mint:#A8E0D0; --band:#126B68; --on-band:#F1FAF7; --on-band-muted:#BFE3DC;
+  --wa:#0F7A43; --wa-hover:#0B6637; --on-wa:#FFFFFF;
+  --footer:#0F3D3B; --on-footer:#E4F2EE; --on-footer-muted:#A9C9C3;
+  --header-bg:rgba(250,250,247,.88);
+  --shadow:0 1px 2px rgba(18,60,58,.06),0 16px 36px -16px rgba(18,60,58,.22);
+  --font-display:"Plus Jakarta Sans","Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --font-body:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --r:20px; --r-sm:12px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0E1A1A; --surface:#152525; --sage:#1B3230; --sage-2:#142625;
+  --ink:#E5EEEB; --muted:#A8BBB6; --line:#28443F;
+  --primary:#7ED6CC; --primary-hover:#A1E4DC; --on-primary:#06201E;
+  --mint:#2F5E58; --band:#0F4B49; --on-band:#EAF6F3; --on-band-muted:#A9D2CB;
+  --wa:#3DDC84; --wa-hover:#68E7A2; --on-wa:#05230F;
+  --footer:#091413; --on-footer:#E0EEEA; --on-footer-muted:#97B5AF;
+  --header-bg:rgba(14,26,26,.86);
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 16px 36px -16px rgba(0,0,0,.6);
+  color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0E1A1A; --surface:#152525; --sage:#1B3230; --sage-2:#142625;
+  --ink:#E5EEEB; --muted:#A8BBB6; --line:#28443F;
+  --primary:#7ED6CC; --primary-hover:#A1E4DC; --on-primary:#06201E;
+  --mint:#2F5E58; --band:#0F4B49; --on-band:#EAF6F3; --on-band-muted:#A9D2CB;
+  --wa:#3DDC84; --wa-hover:#68E7A2; --on-wa:#05230F;
+  --footer:#091413; --on-footer:#E0EEEA; --on-footer-muted:#97B5AF;
+  --header-bg:rgba(14,26,26,.86);
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 16px 36px -16px rgba(0,0,0,.6);
+  color-scheme:dark}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--font-body);font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3,h4{font-family:var(--font-display);margin:0;color:var(--ink);text-wrap:balance}
+p{margin:0}
+a{color:var(--primary)}
+img,svg{max-width:100%}
+:focus-visible{outline:3px solid var(--primary);outline-offset:3px;border-radius:6px}
+section[id],footer[id]{scroll-margin-top:84px}
+
+.wrap{width:100%;max-width:1180px;margin-inline:auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.band{padding-block:clamp(56px,8vw,104px)}
+.eyebrow{font-size:.75rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--primary)}
+.h2{font-size:clamp(1.8rem,3.4vw,2.65rem);line-height:1.12;letter-spacing:-.025em;font-weight:800}
+.lead{font-size:1.08rem;color:var(--muted);max-width:60ch}
+.sec-head{display:grid;gap:14px;margin-bottom:clamp(32px,5vw,56px)}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:12px 22px;border-radius:999px;border:1.5px solid transparent;font:700 .95rem/1.2 var(--font-body);text-decoration:none;cursor:pointer;transition:background .2s,transform .2s,border-color .2s,color .2s;text-align:center}
+.btn:hover{transform:translateY(-1px)}
+.btn-primary{background:var(--primary);color:var(--on-primary)}
+.btn-primary:hover{background:var(--primary-hover)}
+.btn-ghost{background:transparent;color:var(--primary);border-color:var(--primary)}
+.btn-ghost:hover{background:var(--sage)}
+.btn-wa{background:var(--wa);color:var(--on-wa)}
+.btn-wa:hover{background:var(--wa-hover)}
+.btn-light{background:var(--on-band);color:var(--band)}
+.btn svg{flex:none}
+
+/* header */
+.site-header{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:var(--header-bg);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:68px}
+.wordmark{display:flex;flex-direction:column;line-height:1;text-decoration:none;color:var(--ink)}
+.wordmark b{font-family:var(--font-display);font-weight:800;font-size:1.45rem;letter-spacing:-.03em;color:var(--primary)}
+.wordmark span{font-size:.62rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-top:5px}
+.nav{display:flex;align-items:center;gap:28px}
+.nav a.nl{color:var(--ink);text-decoration:none;font-weight:600;font-size:.94rem;padding:6px 0;border-bottom:2px solid transparent}
+.nav a.nl:hover{border-bottom-color:var(--primary)}
+.menu-btn{display:none;width:46px;height:46px;border-radius:12px;border:1.5px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer;align-items:center;justify-content:center}
+.mobile-menu{border-top:1px solid var(--line);padding-block:12px 18px}
+.mobile-menu a.nl{display:block;padding:13px 2px;color:var(--ink);text-decoration:none;font-weight:600;border-bottom:1px solid var(--line)}
+.mobile-menu .btn{margin-top:16px;width:100%}
+@media (max-width:900px){.nav{display:none}.menu-btn{display:inline-flex}}
+@media (min-width:901px){.mobile-menu{display:none!important}}
+
+/* hero */
+.hero{padding-block:clamp(36px,6vw,80px) clamp(48px,7vw,96px)}
+.hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:clamp(32px,5vw,72px);align-items:center}
+.hero h1{font-size:clamp(2.5rem,5.6vw,4.3rem);line-height:1.03;letter-spacing:-.035em;font-weight:800}
+.hero h1 span{display:block}
+.hero h1 .em{color:var(--primary)}
+.hero p.lead{margin-top:22px;font-size:1.14rem}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.trust-line{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:28px;padding-top:22px;border-top:1px solid var(--line);font-size:.88rem;font-weight:600;color:var(--muted)}
+.trust-line i{font-style:normal;color:var(--primary);opacity:.55}
+.frame{position:relative;aspect-ratio:4/4.6;max-width:100%;border-radius:28px;background:var(--sage);overflow:hidden;box-shadow:var(--shadow)}
+.frame .gonio{position:absolute;inset:0;width:100%;height:100%}
+.frame .gonio text{font-family:var(--font-body);font-weight:700;fill:var(--primary)}
+.arm{transform-box:view-box;transform-origin:200px 250px;transform:rotate(118deg);animation:sweep 2.2s cubic-bezier(.2,.7,.2,1) both}
+@keyframes sweep{from{transform:rotate(6deg)}to{transform:rotate(118deg)}}
+.float-card{position:absolute;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:12px 16px;box-shadow:var(--shadow);font-size:.86rem;line-height:1.4;max-width:calc(100% - 24px)}
+.float-card b{display:block;font-family:var(--font-display);font-size:.95rem}
+.float-card small{color:var(--muted);font-size:.78rem}
+.fc-status{left:14px;bottom:14px;display:flex;gap:12px;align-items:center}
+.fc-loc{right:14px;top:14px;text-align:right}
+.dot{width:10px;height:10px;border-radius:50%;background:#9AA9A5;flex:none}
+.dot.open{background:#1FA463;box-shadow:0 0 0 4px rgba(31,164,99,.2)}
+.frame-note{position:absolute;left:18px;right:18px;top:62px;font-size:.7rem;letter-spacing:.04em;color:var(--muted);text-align:left;max-width:15em}
+.ph{margin:0;position:relative;overflow:hidden;background:var(--sage)}
+.ph img{width:100%;height:100%;object-fit:cover;display:block}
+
+/* trust */
+.trust{background:var(--surface);border-block:1px solid var(--line)}
+.trust-grid{display:grid;grid-template-columns:repeat(4,1fr)}
+.t-item{padding:26px 22px;display:grid;gap:4px;align-content:start;border-left:1px solid var(--line)}
+.t-item:first-child{border-left:0;padding-left:0}
+.t-item b{font-family:var(--font-display);font-size:1.05rem}
+.t-item span{font-size:.88rem;color:var(--muted)}
+.t-rate{display:flex;align-items:center;gap:10px}
+.t-rate .num{font-family:var(--font-display);font-weight:800;font-size:2.2rem;line-height:1;letter-spacing:-.03em;color:var(--primary)}
+.stars{display:flex;gap:2px;color:#E2A72E}
+@media (max-width:900px){.trust-grid{grid-template-columns:1fr 1fr}.t-item{border-left:0;padding:20px 0;border-bottom:1px solid var(--line)}.t-item:nth-child(even){padding-left:18px;border-left:1px solid var(--line)}.t-item:nth-last-child(-n+2){border-bottom:0}}
+@media (max-width:520px){.trust-grid{grid-template-columns:1fr}.t-item,.t-item:nth-child(even){padding:18px 0;border-left:0;border-bottom:1px solid var(--line)}.t-item:last-child{border-bottom:0}}
+
+/* about */
+.about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(32px,6vw,88px);align-items:center}
+.about-copy{display:grid;gap:18px}
+.about-copy .h2{margin-top:4px}
+.about-copy .btn{justify-self:start;margin-top:6px}
+.flow{list-style:none;margin:0;padding:0;display:grid;gap:0;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);overflow:hidden}
+.flow li{display:grid;grid-template-columns:52px 1fr;gap:16px;padding:20px 22px;border-top:1px solid var(--line);align-items:start}
+.flow li:first-child{border-top:0}
+.flow .n{width:40px;height:40px;border-radius:50%;background:var(--sage);color:var(--primary);display:grid;place-items:center;font-family:var(--font-display);font-weight:800}
+.flow b{font-family:var(--font-display);display:block;margin-bottom:2px}
+.flow span{color:var(--muted);font-size:.93rem}
+.flow-cap{padding:14px 22px;background:var(--sage-2);font-size:.8rem;color:var(--muted);border-top:1px solid var(--line)}
+.about-img{aspect-ratio:16/10;border-radius:var(--r);margin-bottom:18px}
+@media (max-width:900px){.about-grid{grid-template-columns:1fr}}
+
+/* services */
+.services{background:var(--sage)}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.svc{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:28px 26px;display:grid;gap:14px;align-content:start;transition:transform .25s,box-shadow .25s}
+.svc:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.ico{width:52px;height:52px;border-radius:14px;background:var(--sage-2);color:var(--primary);display:grid;place-items:center}
+.svc h3{font-size:1.15rem;line-height:1.25;letter-spacing:-.01em}
+.svc p{color:var(--muted);font-size:.95rem}
+.svc-foot{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;margin-top:32px}
+.svc-foot small{color:var(--muted);max-width:56ch}
+@media (max-width:980px){.svc-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:620px){.svc-grid{grid-template-columns:1fr}}
+
+/* why */
+.why{background:var(--band);color:var(--on-band)}
+.why .h2,.why h3{color:var(--on-band)}
+.why .eyebrow{color:var(--mint)}
+.why .lead{color:var(--on-band-muted)}
+.why-grid{display:grid;grid-template-columns:repeat(2,1fr);border-top:1px solid rgba(255,255,255,.22)}
+.why-item{padding:34px 0;display:grid;grid-template-columns:56px 1fr;gap:20px;border-bottom:1px solid rgba(255,255,255,.22)}
+.why-item:nth-child(odd){padding-right:clamp(16px,4vw,56px);border-right:1px solid rgba(255,255,255,.22)}
+.why-item:nth-child(even){padding-left:clamp(16px,4vw,56px)}
+.why-item .ico{background:rgba(255,255,255,.12);color:var(--on-band)}
+.why-item h3{font-size:1.2rem;margin-bottom:6px}
+.why-item p{color:var(--on-band-muted);font-size:.96rem}
+.why-note{margin-top:22px;font-size:.8rem;color:var(--on-band-muted)}
+@media (max-width:760px){.why-grid{grid-template-columns:1fr}.why-item:nth-child(odd),.why-item:nth-child(even){padding:28px 0;border-right:0}}
+
+/* therapists */
+.team-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.person{display:grid;grid-template-columns:150px 1fr;gap:24px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:22px;align-items:center}
+.slot{aspect-ratio:3/4;border-radius:14px;border:1.5px dashed var(--primary);background:var(--sage-2);display:grid;place-items:center;text-align:center;font-size:.72rem;color:var(--muted);padding:10px;line-height:1.35}
+.person h3{font-size:1.35rem;letter-spacing:-.02em}
+.person .role{font-size:.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--primary);margin-bottom:8px}
+.person p{color:var(--muted);font-size:.93rem}
+@media (max-width:980px){.team-grid{grid-template-columns:1fr}}
+@media (max-width:480px){.person{grid-template-columns:1fr}.slot{aspect-ratio:16/9}}
+
+/* reviews */
+.reviews{background:var(--sage-2);border-block:1px solid var(--line)}
+.rev-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(24px,5vw,64px);align-items:center}
+.rev-box{background:var(--surface);border:1.5px dashed var(--primary);border-radius:var(--r);padding:30px;display:grid;gap:16px}
+.rev-box .lines{display:grid;gap:10px}
+.rev-box .lines i{display:block;height:10px;border-radius:6px;background:var(--sage)}
+.rev-box .lines i:nth-child(1){width:92%}.rev-box .lines i:nth-child(2){width:78%}.rev-box .lines i:nth-child(3){width:55%}
+.rev-box b{font-family:var(--font-display);font-size:1.15rem}
+.rev-box small{color:var(--muted)}
+.rev-rate{display:grid;gap:14px;justify-items:start}
+.big-rate{font-family:var(--font-display);font-weight:800;font-size:4.4rem;line-height:1;letter-spacing:-.05em;color:var(--primary)}
+.rev-rate small{color:var(--muted);max-width:36ch;display:block}
+@media (max-width:900px){.rev-grid{grid-template-columns:1fr}}
+
+/* location */
+.loc-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,64px);align-items:stretch}
+.loc-info{display:grid;gap:26px;align-content:start}
+.addr{font-style:normal;font-size:1.05rem;line-height:1.6}
+.phone-row{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px}
+.phone-row .num{font-family:var(--font-display);font-weight:800;font-size:1.4rem;letter-spacing:-.01em}
+.copy{border:1.5px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:7px 14px;font:600 .82rem var(--font-body);cursor:pointer}
+.copy:hover{border-color:var(--primary)}
+.hours{width:100%;border-collapse:collapse;font-size:.96rem}
+.hours th,.hours td{text-align:left;padding:11px 14px;border-bottom:1px solid var(--line);vertical-align:top;font-variant-numeric:tabular-nums}
+.hours th{font-weight:700;width:36%}
+.hours tr.today{background:var(--sage)}
+.hours tr.today th::after{content:"Today";margin-left:8px;font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;background:var(--primary);color:var(--on-primary);padding:2px 8px;border-radius:999px;vertical-align:middle}
+.hours .closed{color:var(--muted)}
+.hours-wrap{border:1px solid var(--line);border-radius:var(--r-sm);overflow:hidden;background:var(--surface)}
+.hours-wrap .hours tr:last-child th,.hours-wrap .hours tr:last-child td{border-bottom:0}
+.map-card{position:relative;min-height:360px;border-radius:var(--r);overflow:hidden;background:var(--sage);border:1px solid var(--line);display:grid;align-content:end;padding:26px;gap:14px;isolation:isolate}
+.map-card svg.grid{position:absolute;inset:0;width:100%;height:100%;z-index:-1}
+.map-card h3{font-size:1.3rem}
+.map-card p{color:var(--muted);font-size:.93rem;max-width:44ch}
+.map-card .btn{justify-self:start}
+@media (max-width:900px){.loc-grid{grid-template-columns:1fr}}
+
+/* enquiry */
+.enquire{background:var(--sage)}
+.enq-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,72px);align-items:start}
+.enq-copy{display:grid;gap:20px}
+.enq-btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:6px}
+.enq-num{font-size:.9rem;color:var(--muted)}
+.enq-num b{color:var(--ink);font-variant-numeric:tabular-nums}
+.form{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:clamp(20px,3vw,32px);display:grid;gap:18px;box-shadow:var(--shadow)}
+.form h3{font-size:1.2rem}
+.field{display:grid;gap:7px}
+.field label,.field legend{font-size:.85rem;font-weight:700}
+.field input[type=text],.field textarea{width:100%;font:500 1rem var(--font-body);color:var(--ink);background:var(--bg);border:1.5px solid var(--line);border-radius:12px;padding:12px 14px;min-height:48px}
+.field textarea{min-height:104px;resize:vertical}
+.field input:focus-visible,.field textarea:focus-visible{outline:3px solid var(--primary);outline-offset:1px}
+fieldset.field{border:0;padding:0;margin:0;min-width:0}
+.seg{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
+.seg label{display:inline-flex;align-items:center;gap:8px;border:1.5px solid var(--line);border-radius:999px;padding:9px 16px;font-weight:600;cursor:pointer;background:var(--bg)}
+.seg input{accent-color:var(--primary)}
+.seg label:has(input:checked){border-color:var(--primary);background:var(--sage)}
+.demo-note{font-size:.8rem;color:var(--muted);background:var(--sage-2);border-radius:10px;padding:11px 14px;line-height:1.5}
+@media (max-width:900px){.enq-grid{grid-template-columns:1fr}}
+
+/* footer */
+.site-footer{background:var(--footer);color:var(--on-footer);padding-block:56px calc(96px + env(safe-area-inset-bottom,0px))}
+.foot-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:36px}
+.site-footer h4{font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--on-footer-muted);margin-bottom:14px;font-family:var(--font-body);font-weight:700}
+.site-footer a{color:var(--on-footer)}
+.site-footer ul{list-style:none;margin:0;padding:0;display:grid;gap:9px;font-size:.93rem}
+.site-footer address{font-style:normal;font-size:.93rem;line-height:1.6}
+.foot-brand b{font-family:var(--font-display);font-size:1.5rem;letter-spacing:-.03em;display:block}
+.foot-brand p{font-size:.93rem;color:var(--on-footer-muted);margin-top:10px;max-width:34ch}
+.foot-bottom{margin-top:44px;padding-top:22px;border-top:1px solid rgba(255,255,255,.14);display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px 24px;font-size:.82rem;color:var(--on-footer-muted)}
+details.verify{margin-top:28px;border:1px solid rgba(255,255,255,.18);border-radius:14px;padding:14px 18px;font-size:.88rem}
+details.verify summary{cursor:pointer;font-weight:700;color:var(--on-footer)}
+details.verify ul{margin-top:12px;color:var(--on-footer-muted);padding-left:18px;list-style:disc}
+@media (max-width:900px){.foot-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.foot-grid{grid-template-columns:1fr}}
+
+/* floating whatsapp */
+.fab{position:fixed;right:calc(16px + env(safe-area-inset-right,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:50;display:inline-flex;align-items:center;gap:10px;min-height:54px;padding:0 20px 0 16px;border-radius:999px;background:var(--wa);color:var(--on-wa);font:700 .95rem var(--font-body);text-decoration:none;box-shadow:0 10px 28px -8px rgba(0,0,0,.45);transition:background .2s,transform .2s}
+.fab:hover{background:var(--wa-hover);transform:translateY(-2px)}
+@media (max-width:420px){.fab span{display:none}.fab{padding:0 15px}}
+
+@media (max-width:900px){.hero-grid{grid-template-columns:1fr}.frame{aspect-ratio:4/3.4}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.arm{animation:none}.btn,.svc,.fab{transition:none}.btn:hover,.svc:hover,.fab:hover{transform:none}}
+</style>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Physiotherapy","name":"Croissance Physiotherapy & Rehabilitation Centers","telephone":"+91 95797 97397","address":{"@type":"PostalAddress","streetAddress":"Elliot Complex, Office No. 101A, First Floor, Veerbhadra Nagar Road, next to Smart Life Chemist, Swati Park, Baner","addressLocality":"Pune","addressRegion":"Maharashtra","postalCode":"411069","addressCountry":"IN"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"11:00","closes":"14:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"18:00","closes":"21:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"11:00","closes":"14:00"}]}
+</script>
+
+<header class="site-header">
+  <div class="wrap">
+    <div class="bar">
+      <a class="wordmark" href="#home" aria-label="Croissance Physiotherapy, home"><b>Croissance</b><span>Physiotherapy &amp; Rehab</span></a>
+      <nav class="nav" aria-label="Primary">
+        <a class="nl" href="#home">Home</a>
+        <a class="nl" href="#about">About</a>
+        <a class="nl" href="#services">Services</a>
+        <a class="nl" href="#why">Why Choose Us</a>
+        <a class="nl" href="#contact">Contact</a>
+        <a class="btn btn-primary" href="#enquire">Book Appointment</a>
+      </nav>
+      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path id="menuIco" d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu" hidden>
+      <a class="nl" href="#home">Home</a>
+      <a class="nl" href="#about">About</a>
+      <a class="nl" href="#services">Services</a>
+      <a class="nl" href="#why">Why Choose Us</a>
+      <a class="nl" href="#contact">Contact</a>
+      <a class="btn btn-primary" href="#enquire">Book Appointment</a>
+    </div>
+  </div>
+</header>
+
+<main id="home">
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="eyebrow">Physiotherapy &amp; rehabilitation in Baner, Pune</p>
+        <h1 style="margin-top:16px"><span>Move Better.</span><span class="em">Recover Stronger.</span><span>Live Better.</span></h1>
+        <p class="lead">Personalized physiotherapy and rehabilitation focused on helping you improve mobility, manage pain, and work towards your everyday movement goals.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#enquire">Book an Appointment</a>
+          <a class="btn btn-ghost" href="#services">Explore Our Services</a>
+        </div>
+        <p class="trust-line"><span>Patient-focused care</span><i>|</i><span>Personalized rehabilitation</span><i>|</i><span>Convenient Baner location</span></p>
+      </div>
+
+      <div class="frame" data-photo="hero" data-alt="A physiotherapist guiding a patient through a rehabilitation exercise">
+        <svg class="gonio" viewBox="0 0 400 460" role="img" aria-label="Illustration of a goniometer, the instrument used to measure joint range of motion" preserveAspectRatio="xMidYMid slice">
+          <defs><linearGradient id="gd" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFFFF" stop-opacity=".55"/><stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/></linearGradient></defs>
+          <rect width="400" height="460" fill="url(#gd)"/>
+          <g transform="translate(0,60)">
+            <path d="M30 250A170 170 0 0 1 370 250Z" fill="#FFFFFF" fill-opacity=".5" stroke="#126B68" stroke-opacity=".25"/>
+            <path d="M62 250A138 138 0 0 1 338 250" fill="none" stroke="#126B68" stroke-opacity=".18"/>
+            <g id="ticks" stroke="#126B68"></g>
+            <g id="tickLabels" font-size="11" text-anchor="middle"></g>
+            <line x1="30" y1="250" x2="370" y2="250" stroke="#126B68" stroke-width="3" stroke-linecap="round"/>
+            <g class="arm"><line x1="200" y1="250" x2="24" y2="250" stroke="#126B68" stroke-width="7" stroke-linecap="round"/><line x1="200" y1="250" x2="24" y2="250" stroke="#A8E0D0" stroke-width="2" stroke-linecap="round"/></g>
+            <circle cx="200" cy="250" r="15" fill="#126B68"/><circle cx="200" cy="250" r="5" fill="#A8E0D0"/>
+          </g>
+        </svg>
+        <p class="frame-note">Illustration: a goniometer, used to measure joint range of motion.</p>
+        <div class="float-card fc-loc"><b>Baner, Pune</b><small>Elliot Complex, Veerbhadra Nagar Rd</small></div>
+        <div class="float-card fc-status"><span class="dot" id="dot"></span><div><b id="statusMain">Checking hours</b><small id="statusSub">Mon to Fri, Sat mornings</small></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="trust" aria-label="Why patients enquire">
+    <div class="wrap trust-grid">
+      <div class="t-item">
+        <div class="t-rate"><span class="num">4.9</span>
+          <span class="stars" aria-label="4.9 out of 5 stars"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path id="star" d="M12 2.6l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4 6.1 20.6l1.2-6.5L2.5 9.5l6.6-.9z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><use href="#star"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><use href="#star"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><use href="#star"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><use href="#star"/></svg></span></div>
+        <span>Google rating, as supplied for this demo. To be confirmed before launch.</span>
+      </div>
+      <div class="t-item"><b>Personalized care</b><span>Physiotherapy shaped around your goals and how you move.</span></div>
+      <div class="t-item"><b>Convenient Baner location</b><span>Elliot Complex, Veerbhadra Nagar Road, Pune 411069.</span></div>
+      <div class="t-item"><b>Direct enquiries</b><span>Message on WhatsApp or call the clinic to ask about timings.</span></div>
+    </div>
+  </section>
+
+  <section class="band" id="about">
+    <div class="wrap about-grid">
+      <div class="about-copy">
+        <p class="eyebrow">About the clinic</p>
+        <h2 class="h2">Rehabilitation That Puts Your Goals First</h2>
+        <p class="lead">Physiotherapy helps people move, recover and function well after injury, illness or surgery, and supports everyday movement for people living with pain or stiffness.</p>
+        <p class="lead">Croissance Physiotherapy &amp; Rehabilitation Centers is a physiotherapy and rehabilitation practice in Baner, Pune. Every person arrives with a different body, history and goal, so care starts with understanding what you want to get back to and builds the plan from there. Recovery varies from person to person, and your physiotherapist will guide you on what is realistic for you.</p>
+        <a class="btn btn-primary" href="#enquire">Enquire About an Appointment</a>
+      </div>
+      <div>
+        <figure class="ph about-img" data-photo="about" data-alt="A physiotherapist and patient in a clinical consultation" hidden></figure>
+        <ol class="flow" aria-label="How physiotherapy care typically works">
+          <li><span class="n">1</span><div><b>Assessment</b><span>A conversation and a physical check to understand your symptoms and goals.</span></div></li>
+          <li><span class="n">2</span><div><b>A plan built for you</b><span>Treatment and exercises chosen for your condition and daily routine.</span></div></li>
+          <li><span class="n">3</span><div><b>Guided exercise</b><span>Hands-on support and movement practice, with clear instructions to follow.</span></div></li>
+          <li><span class="n">4</span><div><b>Review and progress</b><span>The plan is reviewed as you recover and adjusted when needed.</span></div></li>
+          <li class="flow-cap" style="display:block;padding:14px 22px">A general description of physiotherapy care. The clinic will confirm its own process.</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="band services" id="services">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Physiotherapy services</p>
+        <h2 class="h2">Care for how you move</h2>
+        <p class="lead">Six areas of physiotherapy and rehabilitation. Service details are subject to confirmation by the clinic.</p>
+      </div>
+      <div class="svc-grid">
+        <article class="svc"><div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="7" cy="6" r="2.6"/><circle cx="17" cy="18" r="2.6"/><path d="M8.6 8l6.8 8"/></svg></div><h3>Orthopaedic &amp; Musculoskeletal Physiotherapy</h3><p>Support for movement difficulties and musculoskeletal conditions.</p></article>
+        <article class="svc"><div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="2.5" width="8" height="4" rx="1.6"/><rect x="7.5" y="8.5" width="9" height="4" rx="1.6"/><rect x="8" y="14.5" width="8" height="3.4" rx="1.6"/><path d="M10 20.5h4"/></svg></div><h3>Spine, Neck &amp; Back Rehabilitation</h3><p>Individualized physiotherapy approaches for relevant spine and musculoskeletal concerns.</p></article>
+        <article class="svc"><div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="13.5" r="7"/><path d="M12 10v3.8l2.4 1.6M9.5 2.8h5"/></svg></div><h3>Sports Injury Rehabilitation</h3><p>Guided rehabilitation and movement recovery following sports-related injuries.</p></article>
+        <article class="svc"><div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="5" r="2.2"/><circle cx="5.5" cy="17.5" r="2.2"/><circle cx="18.5" cy="17.5" r="2.2"/><path d="M12 7.2v4.3m0 0l-5 4m5-4l5 4"/></svg></div><h3>Neurological Rehabilitation</h3><p>Rehabilitation focused on mobility, coordination, balance, and functional movement where appropriate.</p></article>
+        <article class="svc"><div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="8.5" width="18" height="7" rx="3.5" transform="rotate(-35 12 12)"/><path d="M10.2 9.4l3.4 3.4"/></svg></div><h3>Post-operative Rehabilitation</h3><p>Rehabilitation support following surgery, according to the treating clinician's recommendations.</p></article>
+        <article class="svc"><div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21c-5-3.2-8-6.4-8-10a4.6 4.6 0 0 1 8-3 4.6 4.6 0 0 1 8 3c0 3.6-3 6.8-8 10z"/></svg></div><h3>Women's Health &amp; Other Rehabilitation Services</h3><p>Further programmes, such as women's health, geriatric and cardiorespiratory rehabilitation, as confirmed by the clinic.</p></article>
+      </div>
+      <div class="svc-foot">
+        <small>Physiotherapy cannot promise a cure, a recovery timeline or the end of pain. Your physiotherapist will explain what to expect for you.</small>
+        <a class="btn btn-primary" href="#enquire">Enquire About an Appointment</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="band why" id="why">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Why choose Croissance</p>
+        <h2 class="h2">Care that is clear, personal and easy to reach</h2>
+      </div>
+      <div class="why-grid">
+        <div class="why-item"><div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4h6M10 2.5h4v3h-4zM6 5h-.5A1.5 1.5 0 0 0 4 6.5v13A1.5 1.5 0 0 0 5.500 21h13a1.5 1.5 0 0 0 1.500-1.500v-13A1.5 1.5 0 0 0 18.500 5H18M8 11h8M8 15h5"/></svg></div><div><h3>Personalized care plans</h3><p>Your plan reflects your condition, your routine and what you want to get back to.</p></div></div>
+        <div class="why-item"><div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5.5A1.500 1.500 0 0 1 5.500 4H20v13H5.500A1.500 1.500 0 0 0 4 18.500zM4 18.500A1.500 1.500 0 0 0 5.500 20H20v-3"/><path d="M9 9h7M9 12.500h4"/></svg></div><div><h3>Clear guidance and patient education</h3><p>Plain explanations of what is happening and what to do between visits.</p></div></div>
+        <div class="why-item"><div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="13" cy="4.500" r="2"/><path d="M8 21l2.500-6 3 1.500 1.500 4.500M10.500 15l-1-5 4-2 3 3.500M9.500 10L6 12"/></svg></div><div><h3>Focus on functional movement and rehabilitation</h3><p>Treatment aims at the everyday movements that matter to you, such as walking, lifting and working.</p></div></div>
+        <div class="why-item"><div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 12a8 8 0 0 1-11.800 7L4 20l1.100-4A8 8 0 1 1 20 12z"/><path d="M9 10c.5 2.300 2.700 4.500 5 5l1.200-1.300-1.800-1-.9.700c-.8-.4-1.500-1.100-1.900-1.900l.7-.9-1-1.800z"/></svg></div><div><h3>Convenient appointment enquiries</h3><p>Ask about timings by WhatsApp or phone, without filling in long forms.</p></div></div>
+      </div>
+      <p class="why-note">Proposed brand messaging, for the clinic to review and approve.</p>
+    </div>
+  </section>
+
+  <section class="band" id="team">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Meet the physiotherapists</p>
+        <h2 class="h2">The people behind your care</h2>
+      </div>
+      <div class="team-grid">
+        <article class="person"><div class="slot">Photo to be supplied by the clinic</div><div><p class="role">Physiotherapist</p><h3>Dr. Dharmesh Solanki</h3><p style="margin-top:10px">Professional profile to be confirmed by the clinic.</p></div></article>
+        <article class="person"><div class="slot">Photo to be supplied by the clinic</div><div><p class="role">Physiotherapist</p><h3>Dr. Sibina D. Solanki</h3><p style="margin-top:10px">Professional profile to be confirmed by the clinic.</p></div></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="band reviews" id="reviews">
+    <div class="wrap rev-grid">
+      <div class="rev-rate">
+        <p class="eyebrow">Patient reviews</p>
+        <h2 class="h2">What patients say</h2>
+        <div class="big-rate">4.9</div>
+        <small>Google rating as supplied for this demo. The review count and wording will come from the live listing once confirmed.</small>
+        <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&amp;query=Croissance+Physiotherapy+%26+Rehabilitation+Centers+Baner+Pune" target="_blank" rel="noopener">Read reviews on Google</a>
+      </div>
+      <div class="rev-box" aria-label="Preview of the reviews area">
+        <b>Verified patient reviews can be displayed here.</b>
+        <div class="lines" aria-hidden="true"><i></i><i></i><i></i></div>
+        <small>Genuine Google reviews will appear in this space with the reviewer's permission. No sample reviews are shown in this demo.</small>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="contact">
+    <div class="wrap loc-grid">
+      <div class="loc-info">
+        <div class="sec-head" style="margin:0">
+          <p class="eyebrow">Clinic location and timings</p>
+          <h2 class="h2">Visit us in Baner, Pune</h2>
+        </div>
+        <address class="addr">Elliot Complex, Office No. 101A, First Floor,<br>Veerbhadra Nagar Road, next to Smart Life Chemist,<br>Swati Park, Baner, Pune, Maharashtra 411069, India</address>
+        <div class="phone-row">
+          <span class="num">+91 95797 97397</span>
+          <a class="btn btn-ghost" href="tel:+919579797397" style="min-height:42px;padding:8px 18px">Call</a>
+          <button class="copy" type="button" id="copyNum">Copy number</button>
+        </div>
+        <div class="hours-wrap">
+          <table class="hours" aria-label="Opening hours">
+            <tbody>
+              <tr data-d="1"><th scope="row">Monday</th><td>11:00 AM – 2:00 PM<br>6:00 PM – 9:30 PM</td></tr>
+              <tr data-d="2"><th scope="row">Tuesday</th><td>11:00 AM – 2:00 PM<br>6:00 PM – 9:30 PM</td></tr>
+              <tr data-d="3"><th scope="row">Wednesday</th><td>11:00 AM – 2:00 PM<br>6:00 PM – 9:30 PM</td></tr>
+              <tr data-d="4"><th scope="row">Thursday</th><td>11:00 AM – 2:00 PM<br>6:00 PM – 9:30 PM</td></tr>
+              <tr data-d="5"><th scope="row">Friday</th><td>11:00 AM – 2:00 PM<br>6:00 PM – 9:30 PM</td></tr>
+              <tr data-d="6"><th scope="row">Saturday</th><td>11:00 AM – 2:00 PM</td></tr>
+              <tr data-d="0"><th scope="row">Sunday</th><td class="closed">Closed</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="map-card">
+        <svg class="grid" viewBox="0 0 400 360" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <g fill="none" stroke="#126B68" stroke-opacity=".16" stroke-width="1.5">
+            <path d="M-20 90C80 70 140 140 240 110S360 60 430 90"/><path d="M-20 210C70 190 150 250 250 220S380 180 430 200"/>
+            <path d="M70 -10C60 80 110 150 90 250S110 330 100 380"/><path d="M230 -10C250 70 210 140 240 220S260 320 250 380"/><path d="M340 -10C330 60 360 120 340 200S350 320 345 380"/>
+          </g>
+          <g fill="#126B68" fill-opacity=".06"><rect x="110" y="120" width="90" height="60" rx="8"/><rect x="262" y="236" width="70" height="56" rx="8"/><rect x="20" y="236" width="56" height="50" rx="8"/></g>
+        </svg>
+        <h3>Find the clinic on Google Maps</h3>
+        <p>Open directions to Croissance Physiotherapy &amp; Rehabilitation Centers in Baner from wherever you are.</p>
+        <a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&amp;query=Croissance+Physiotherapy+%26+Rehabilitation+Centers+Baner+Pune" target="_blank" rel="noopener">Get Directions</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="band enquire" id="enquire">
+    <div class="wrap enq-grid">
+      <div class="enq-copy">
+        <p class="eyebrow">Appointment enquiry</p>
+        <h2 class="h2">Ready to Take the Next Step?</h2>
+        <p class="lead">Have questions about physiotherapy or want to enquire about an appointment? Contact the clinic directly.</p>
+        <div class="enq-btns">
+          <a class="btn btn-wa" id="waMain" href="https://wa.me/919579797397?text=Hello%20Croissance%20Physiotherapy%20Team%2C%20I%20would%20like%20to%20enquire%20about%20an%20appointment.%20Please%20share%20the%20available%20timings.%20Thank%20you." target="_blank" rel="noopener">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 12a8 8 0 0 1-11.800 7L4 20l1.100-4A8 8 0 1 1 20 12z"/></svg>
+            Enquire on WhatsApp</a>
+          <a class="btn btn-ghost" href="tel:+919579797397">Call the clinic</a>
+        </div>
+        <p class="enq-num">Phone and WhatsApp: <b>+91 95797 97397</b></p>
+      </div>
+      <form class="form" id="enqForm" novalidate>
+        <h3>Send a quick enquiry</h3>
+        <div class="field"><label for="fName">Your name</label><input type="text" id="fName" name="name" autocomplete="name" placeholder="Your name"></div>
+        <fieldset class="field"><legend>Preferred contact method</legend>
+          <div class="seg">
+            <label for="cWa"><input type="radio" id="cWa" name="contact" value="WhatsApp" checked>WhatsApp</label>
+            <label for="cCall"><input type="radio" id="cCall" name="contact" value="Phone call">Phone call</label>
+          </div>
+        </fieldset>
+        <div class="field"><label for="fMsg">Your enquiry</label><textarea id="fMsg" name="message" placeholder="For example: I would like to know the timings for a first visit."></textarea></div>
+        <p class="demo-note">This form is a visual demo. Nothing is stored or sent from this page. The button below opens WhatsApp with your message ready to send. Please do not share medical details here.</p>
+        <a class="btn btn-wa" id="waForm" href="https://wa.me/919579797397" target="_blank" rel="noopener">Continue on WhatsApp</a>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer" id="footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand"><b>Croissance</b><p>Physiotherapy &amp; Rehabilitation Centers, Baner, Pune.</p></div>
+      <div><h4>Visit</h4><address>Elliot Complex, Office No. 101A, First Floor, Veerbhadra Nagar Road, next to Smart Life Chemist, Swati Park, Baner, Pune 411069</address></div>
+      <div><h4>Hours</h4><ul><li>Mon to Fri: 11:00 AM – 2:00 PM, 6:00 PM – 9:30 PM</li><li>Saturday: 11:00 AM – 2:00 PM</li><li>Sunday: Closed</li></ul></div>
+      <div><h4>Explore</h4><ul><li><a href="#about">About</a></li><li><a href="#services">Services</a></li><li><a href="#why">Why Choose Us</a></li><li><a href="#contact">Contact</a></li><li><a href="https://wa.me/919579797397" target="_blank" rel="noopener">WhatsApp: +91 95797 97397</a></li></ul></div>
+    </div>
+    <details class="verify">
+      <summary>For the clinic: details to confirm before launch</summary>
+      <ul>
+        <li>The 4.9 Google rating and the live review count and review link.</li>
+        <li>Opening hours. Some directory listings show shorter hours than the Google listing used here.</li>
+        <li>The list of services, including women's health and any other programmes.</li>
+        <li>Biographies, qualifications and professional photographs for both physiotherapists.</li>
+        <li>Real photographs of the clinic, with licences or permission for any stock images.</li>
+      </ul>
+    </details>
+    <div class="foot-bottom">
+      <span>&copy; <span id="yr">2026</span> Croissance Physiotherapy &amp; Rehabilitation Centers</span>
+      <span>Website concept prepared for review. Not the clinic's official website.</span>
+    </div>
+    <p id="credits" class="foot-bottom" style="border:0;margin-top:8px;padding-top:0" hidden></p>
+  </div>
+</footer>
+
+<a class="fab" href="https://wa.me/919579797397?text=Hello%20Croissance%20Physiotherapy%20Team%2C%20I%20would%20like%20to%20enquire%20about%20an%20appointment.%20Please%20share%20the%20available%20timings.%20Thank%20you." target="_blank" rel="noopener" aria-label="Chat with the clinic on WhatsApp">
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 12a8 8 0 0 1-11.800 7L4 20l1.100-4A8 8 0 1 1 20 12z"/><path d="M9 10c.5 2.300 2.700 4.500 5 5l1.200-1.300-1.800-1-.9.700c-.8-.4-1.500-1.100-1.900-1.900l.7-.9-1-1.800z"/></svg>
+  <span>WhatsApp</span>
+</a>
+
+<script>
+(function(){
+  /* Photos: add licensed image data URIs or published file paths here, keyed by slot name. */
+  var PHOTOS = {};   // e.g. { hero:{src:"hero.jpg", credit:"Photo by Name on Unsplash"} }
+
+  var NS="http://www.w3.org/2000/svg", cx=200, cy=250;
+  var ticks=document.getElementById("ticks"), labels=document.getElementById("tickLabels");
+  for(var a=0;a<=180;a+=10){
+    var r=a%30===0?170:170, len=a%30===0?18:10, rad=a*Math.PI/180;
+    var x1=cx-r*Math.cos(rad), y1=cy-r*Math.sin(rad), x2=cx-(r-len)*Math.cos(rad), y2=cy-(r-len)*Math.sin(rad);
+    var l=document.createElementNS(NS,"line");
+    l.setAttribute("x1",x1.toFixed(1));l.setAttribute("y1",y1.toFixed(1));l.setAttribute("x2",x2.toFixed(1));l.setAttribute("y2",y2.toFixed(1));
+    l.setAttribute("stroke-width",a%30===0?"2":"1.2");l.setAttribute("stroke-opacity",a%30===0?".7":".4");
+    ticks.appendChild(l);
+    if(a%30===0){
+      var t=document.createElementNS(NS,"text"), lr=136;
+      t.setAttribute("x",(cx-lr*Math.cos(rad)).toFixed(1));t.setAttribute("y",(cy-lr*Math.sin(rad)+4).toFixed(1));
+      t.textContent=a+"°";labels.appendChild(t);
+    }
+  }
+
+  var credits=[];
+  Array.prototype.forEach.call(document.querySelectorAll("[data-photo]"),function(el){
+    var p=PHOTOS[el.getAttribute("data-photo")]; if(!p) return;
+    var img=new Image(); img.src=p.src; img.alt=el.getAttribute("data-alt")||""; img.decoding="async";
+    if(el.getAttribute("data-photo")!=="hero") img.loading="lazy";
+    el.hidden=false; el.insertBefore(img,el.firstChild);
+    if(el.classList.contains("frame")){var g=el.querySelector(".gonio"),n=el.querySelector(".frame-note"); if(g)g.remove(); if(n)n.remove(); img.style.cssText="position:absolute;inset:0;width:100%;height:100%;object-fit:cover";}
+    if(p.credit) credits.push(p.credit);
+  });
+  if(credits.length){var c=document.getElementById("credits");c.hidden=false;c.textContent="Photos: "+credits.join(" · ")+". Stock photographs for illustration only; they do not show the clinic, its physiotherapists or its patients.";}
+
+  document.getElementById("yr").textContent=new Date().getFullYear();
+
+  /* mobile menu */
+  var mb=document.getElementById("menuBtn"), mm=document.getElementById("mobileMenu"), ico=document.getElementById("menuIco");
+  function setMenu(open){mm.hidden=!open;mb.setAttribute("aria-expanded",open?"true":"false");mb.setAttribute("aria-label",open?"Close menu":"Open menu");ico.setAttribute("d",open?"M6 6l12 12M18 6L6 18":"M4 7h16M4 12h16M4 17h16");}
+  mb.addEventListener("click",function(){setMenu(mm.hidden);});
+  Array.prototype.forEach.call(mm.querySelectorAll("a"),function(a){a.addEventListener("click",function(){setMenu(false);});});
+  document.addEventListener("keydown",function(e){if(e.key==="Escape"&&!mm.hidden){setMenu(false);mb.focus();}});
+
+  /* open / closed status in India Standard Time */
+  var S={1:[[11,0,14,0],[18,0,21,30]],2:[[11,0,14,0],[18,0,21,30]],3:[[11,0,14,0],[18,0,21,30]],4:[[11,0,14,0],[18,0,21,30]],5:[[11,0,14,0],[18,0,21,30]],6:[[11,0,14,0]],0:[]};
+  var DN=["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+  function fmt(h,m){var s=h>=12?"PM":"AM",hh=h%12||12;return hh+":"+(m<10?"0":"")+m+" "+s;}
+  function status(){
+    var parts=new Intl.DateTimeFormat("en-US",{timeZone:"Asia/Kolkata",weekday:"short",hour:"numeric",minute:"numeric",hour12:false}).formatToParts(new Date()),o={};
+    parts.forEach(function(p){o[p.type]=p.value;});
+    var day=DN.indexOf(o.weekday),now=(parseInt(o.hour,10)%24)*60+parseInt(o.minute,10),slots=S[day]||[],i;
+    Array.prototype.forEach.call(document.querySelectorAll(".hours tr"),function(tr){tr.classList.toggle("today",+tr.getAttribute("data-d")===day);});
+    for(i=0;i<slots.length;i++){var s=slots[i],a=s[0]*60+s[1],b=s[2]*60+s[3];
+      if(now>=a&&now<b)return{open:true,main:"Open now",sub:"Until "+fmt(s[2],s[3])};}
+    for(i=0;i<slots.length;i++){var s2=slots[i];if(now<s2[0]*60+s2[1])return{open:false,main:"Closed now",sub:"Opens today at "+fmt(s2[0],s2[1])};}
+    for(var k=1;k<=7;k++){var d=(day+k)%7,sl=S[d];if(sl&&sl.length)return{open:false,main:"Closed now",sub:"Opens "+(k===1?"tomorrow":DN[d])+" at "+fmt(sl[0][0],sl[0][1])};}
+    return{open:false,main:"Closed now",sub:""};
+  }
+  try{var st=status();document.getElementById("statusMain").textContent=st.main;document.getElementById("statusSub").textContent=st.sub;document.getElementById("dot").classList.toggle("open",st.open);}catch(e){document.getElementById("statusMain").textContent="Hours below";}
+
+  /* copy number */
+  var cb=document.getElementById("copyNum");
+  cb.addEventListener("click",function(){
+    var done=function(){cb.textContent="Copied";setTimeout(function(){cb.textContent="Copy number";},1800);};
+    try{navigator.clipboard.writeText("+91 95797 97397").then(done,function(){cb.textContent="Select number above";});}catch(e){cb.textContent="Select number above";}
+  });
+
+  /* enquiry form: builds a WhatsApp link, sends nothing itself */
+  var base="Hello Croissance Physiotherapy Team, I would like to enquire about an appointment. Please share the available timings. Thank you.";
+  var f=document.getElementById("enqForm"),wa=document.getElementById("waForm");
+  function build(){
+    var n=document.getElementById("fName").value.trim(),m=document.getElementById("fMsg").value.trim(),c=f.querySelector("input[name=contact]:checked").value,t=base;
+    if(n||m){t+="\n\n"+(n?"Name: "+n+"\n":"")+"Preferred contact: "+c+(m?"\nEnquiry: "+m:"");}
+    wa.href="https://wa.me/919579797397?text="+encodeURIComponent(t);
+  }
+  f.addEventListener("input",build);f.addEventListener("change",build);f.addEventListener("submit",function(e){e.preventDefault();});build();
+})();
+</script>
+
+</body></html>
